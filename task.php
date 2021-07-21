@@ -135,39 +135,101 @@ echo PHP_EOL;
 
 ?>
 
-#print("#####q8#####".PHP_EOL);
-#$programming_languages = ["php", "ruby", "python", "javascript"];
-#
-#  # 以下に回答を記載
-#
-#  # 以下は変更しないで下さい
-#print_r($programming_languages);
-#echo PHP_EOL;
-#print_r($upper_case_programming_languages);
-#
-#echo PHP_EOL;
-#
-#print("#####q9#####".PHP_EOL);
-#$names = ["田中", "佐藤", "佐々木", "高橋"];
-#
-#  # 以下に回答を記載
-#
-#echo PHP_EOL;
-#
-#print("#####q10#####".PHP_EOL);
-#$foods = ["いか", "たこ", "うに", "しゃけ", "うにぎり", "うに軍艦", "うに丼", "高級なうに"];
-#
-#  # 以下に回答を記載
-#
-#echo PHP_EOL;
-#
-#print("#####q11#####".PHP_EOL);
-#$sports = ["サッカー", "バスケ", "野球", ["フットサル", "野球"], "水泳", "ハンドボール", ["卓球", "サッカー", "ボルダリング"]];
-#
-#  # 以下に回答を記載
-#
-#echo PHP_EOL;
-#
+print("#####q8#####".PHP_EOL);
+$programming_languages = ["php", "ruby", "python", "javascript"];
+
+  # 以下に回答を記載
+<?
+
+$programming_languages = ["php", "ruby", "python", "javascript"];
+$programming_languages = array_map('ucfirst', $programming_languages);
+$upper_case_programming_languages = array_map('strtoupper', $programming_languages);
+
+  # 以下は変更しないで下さい
+print_r($programming_languages);
+echo PHP_EOL;
+print_r($upper_case_programming_languages);
+
+echo PHP_EOL;
+
+?>
+
+print("#####q9#####".PHP_EOL);
+$names = ["田中", "佐藤", "佐々木", "高橋"];
+
+  # 以下に回答を記載
+
+<?
+
+$names = ["田中", "佐藤", "佐々木", "高橋"];
+
+$names2 = [];
+foreach($names as $key => $name){
+   $number = $key + 1;
+   $name2 = "会員No.".$number." ".$name;
+   array_push($names2,$name2);
+}
+print_r($names2);
+
+echo PHP_EOL;
+
+?>
+
+print("#####q10#####".PHP_EOL);
+$foods = ["いか", "たこ", "うに", "しゃけ", "うにぎり", "うに軍艦", "うに丼", "高級なうに"];
+
+  # 以下に回答を記載
+<?
+
+$foods = ["いか", "たこ", "うに", "しゃけ", "うにぎり", "うに軍艦", "うに丼", "高級>なうに"];
+
+foreach($foods as $food){
+  if(preg_match('/うに/',$food)){
+     print('好物です'.PHP_EOL);
+  }else{
+     print('まぁまぁ好きです'.PHP_EOL);
+  }
+}
+
+echo PHP_EOL;
+
+?>
+
+print("#####q11#####".PHP_EOL);
+$sports = ["サッカー", "バスケ", "野球", ["フットサル", "野球"], "水泳", "ハンドボール", ["卓球", "サッカー", "ボルダリング"]];
+
+  # 以下に回答を記載
+
+<?
+
+$sports = ["サッカー", "バスケ", "野球", ["フットサル", "野球"], "水泳", "ハンドボール", ["卓球", "サッカー", "ボルダリング"]];
+
+$sports2 = [];
+foreach($sports as $key => $sport){
+  if(is_array($sport)){
+     $sports2 = array_merge($sports2, $sport);
+  }else{
+     array_push($sports2, $sport);
+  }
+}
+$sports2 = array_unique($sports2);
+$sports2 = array_values($sports2);
+$sports3 = [];
+foreach($sports2 as $key => $sport){
+  $number = $key + 1;
+  $sport3 = "No.".$number." ".$sport;
+  array_push($sports3, $sport3);
+}
+
+print_r("ユーザの趣味一覧".PHP_EOL);
+foreach($sports3 as $sport){
+   print($sport.PHP_EOL);
+}
+
+echo PHP_EOL;
+
+?>
+
 #print("#####q12#####".PHP_EOL);
 #$data = ["user" => ["name" => "satou", "age" => 33]];
 #
