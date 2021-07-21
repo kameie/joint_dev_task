@@ -290,20 +290,55 @@ $data2 = ["name" => "yamada", "hobby" => "baseball", "role" => "normal"];
 
   # 以下に回答を記載
 
+<?
+
+$data1 = ["name" => "saitou", "hobby" => "soccer", "age" => 33, "role" => "admin"];
+
+if(array_key_exists('age',$data1)){
+   print('OK'.PHP_EOL);
+}else{
+   print('NG'.PHP_EOL);
+}
+
+$data2 = ["name" => "yamada", "hobby" => "baseball", "role" => "normal"];
+
+if(array_key_exists('age', $data2)){
+  print('OK'.PHP_EOL);
+}else{
+  print('NG'.PHP_EOL);
+}
+
 echo PHP_EOL;
 
-#print("#####q16#####".PHP_EOL);
-#$users = [
-#  ["name" => "satou", "age" => 22],
-#  ["name" => "yamada", "age" => 12],
-#  ["name" => "takahashi", "age" => 32],
-#  ["name" => "nakamura", "age" => 41]
-#];
-#
-#  # 以下に回答を記載
-#
-#echo PHP_EOL;
-#
+?>
+
+print("#####q16#####".PHP_EOL);
+$users = [
+  ["name" => "satou", "age" => 22],
+  ["name" => "yamada", "age" => 12],
+  ["name" => "takahashi", "age" => 32],
+  ["name" => "nakamura", "age" => 41]
+];
+
+  # 以下に回答を記載
+
+<?
+
+$users = [
+    ["name" => "satou", "age" => 22],
+    ["name" => "yamada", "age" => 12],
+    ["name" => "takahashi", "age" => 32],
+    ["name" => "nakamura", "age" => 41]
+];
+
+foreach($users as $key => $user){
+    echo "私の名前は".$user["name"]."です。年齢は".$user["age"]."歳です。".PHP_EOL;
+}
+
+echo PHP_EOL;
+
+?>
+
 #print("#####q17#####".PHP_EOL);
 #class User
 #{
